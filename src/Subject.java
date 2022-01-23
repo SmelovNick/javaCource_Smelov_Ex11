@@ -1,8 +1,10 @@
 public enum Subject {
-    Math("математика"),
-    English("английский"),
-    Chemistry("химия"),
-    Astronomy("астрономия");
+    MATH("математика"),
+    ENGLISH("английский"),
+    CHEMISTRY("химия"),
+    ASTRONOMY("астрономия"),
+    LITERATURE("литература"),
+    HISTORY("история");
 
     private String subject;
 
@@ -11,6 +13,16 @@ public enum Subject {
     }
 
     public String getSubject() {
-        return subject;
+        return this.subject;
     }
+
+    public static Subject fromString(String text){
+        for (Subject b : Subject.values()) {
+            if (b.subject.equalsIgnoreCase(text)) {
+                return b;
+            }
+        }
+        return null;
+    }
+
 }
